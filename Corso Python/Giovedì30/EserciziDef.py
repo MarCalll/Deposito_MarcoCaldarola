@@ -1,6 +1,5 @@
 import random
 #Esercizio Base
-"""
 def giocoGeneraNumeroDa1a100():
     numeroCasuale=str(random.randint(1,101))
     print(numeroCasuale)
@@ -19,8 +18,8 @@ def giocoGeneraNumeroDa1a100():
         else:
             print("input non valido")
     
-giocoGeneraNumeroDa1a100()
-"""
+#giocoGeneraNumeroDa1a100()
+
 def fibonacci(numero):
     fibonacciList = [0, 1]
     numeroFibonacci = fibonacciList[-1] + fibonacciList[-2]
@@ -31,4 +30,4 @@ def fibonacci(numero):
         numeroFibonacci = fibonacciList[-1] + fibonacciList[-2]
     return fibonacciList
 
-print(fibonacci(int(input("Inserisci un numero"))))
+# print(fibonacci(int(input("Inserisci un numero"))))
