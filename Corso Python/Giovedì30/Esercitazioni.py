@@ -10,8 +10,11 @@ def decoratore_per_numeri_primi(funzione):
                 print("si")
                 args = (int(input("Scegli un altro numero: ")),)
             else:
+                for i in range(2, args[-1] + 1):
+                    if args[-1] % i == 0:
+                        print("il divisore più piccolo del numero",args[-1], "è:" , i)
+                        break
                 break
-            
     return wrapper
 
 @decoratore_per_numeri_primi
