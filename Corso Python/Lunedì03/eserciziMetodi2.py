@@ -6,8 +6,8 @@ class Libro:
     def descrizione(self):
         print("Il libro", self.titolo, "è stato scritto da", self.autore, "e ha",self.pagine,"pagine.")
     
-lib1=Libro("Il vecchio e il mare","Ernest Hemingway",204)
-lib2=Libro("Il cuore rivelatore","Edgar Allan Poe",21)
+#lib1=Libro("Il vecchio e il mare","Ernest Hemingway",204)
+#lib2=Libro("Il cuore rivelatore","Edgar Allan Poe",21)
 
-lib1.descrizione()
-lib2.descrizione()
+#lib1.descrizione()
+#lib2.descrizione()
