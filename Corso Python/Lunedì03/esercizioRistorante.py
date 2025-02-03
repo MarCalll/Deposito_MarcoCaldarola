@@ -32,9 +32,12 @@ class Ristorante:
             if ele==nome_piatto:
                 self.menu.remove(nome_piatto)
                 
-
     def stampa_menu(self):
-        print(self.menu)
+        cont=0
+        print("MENU", self.nome,":")
+        for ele in self.menu:
+            cont+=1
+            print(cont,".", ele)
 
 ris1=Ristorante("Da Luigi","Vegana")
 
