@@ -1,6 +1,5 @@
 class Persona:
     __nome="Mirko"
-    
     def getNome(self):
         return self.__nome
     def setNome(self,newNome):

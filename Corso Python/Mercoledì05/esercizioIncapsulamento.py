@@ -13,7 +13,9 @@ class Banca:
             print(ele)
         
     def crea_conto_bancario(self,titolare_CB):
-        self.set_conti_bancari(ContoBancario(titolare_CB))
+        newCB = ContoBancario(titolare_CB)
+        self.set_conti_bancari(newCB)
+        return newCB
         
     def aggiungi_saldo_conto_bancario(self):
         chi=input("A quale utente aggiungere saldo")
@@ -67,12 +69,14 @@ class ContoBancario:
       
       
 bancadeipoveri=Banca("Banca dei poveri")
-bancadeipoveri.crea_conto_bancario("Marco")
 bancadeipoveri.crea_conto_bancario("Pippo")
 bancadeipoveri.crea_conto_bancario("Nino")
+conto1=bancadeipoveri.crea_conto_bancario("Marco")
+
+bancadeipoveri.get_conti_bancari()
 bancadeipoveri.aggiungi_saldo_conto_bancario()
-bancadeipoveri.aggiungi_saldo_conto_bancario()
-bancadeipoveri.preleva_da_conto_bancario()
+conto1.visualizza_saldo()
+conto1.deposita(500)
 bancadeipoveri.get_conti_bancari()
 
 #cb=ContoBancario("Marco")
