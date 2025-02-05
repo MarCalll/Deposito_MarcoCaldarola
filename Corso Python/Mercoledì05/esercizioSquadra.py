@@ -10,10 +10,16 @@ class MembroSquadra:
         return f"{self.nome} - {self.eta} anni"
 
 class Giocatore(MembroSquadra):
+    contatore_giocatori =0
     def __init__(self, nome, eta,ruolo,numero_maglia):
         super().__init__(nome, eta)
         self.ruolo = ruolo
         self.numero_maglia = numero_maglia
+        Giocatore.contatore_giocatori+=1
+        
+    @classmethod
+    def count_giocatori(cls):
+        return cls.contatore_giocatori
     
     def __str__(self):
         return f"{self.nome} - {self.eta} anni - {self.ruolo}"
@@ -52,6 +58,7 @@ class Squadra():
         self.lista_assistenti.append(assistenti)
     
     def mostra_squadra(self):
+        print("Ci sono",Giocatore.count_giocatori(), "giocatori.")
         print("Lista di giocatori:")
         for ele in self.lista_giocatori:
             print(ele)
@@ -121,10 +128,16 @@ class Squadra():
         
     
 kaka = Giocatore("Kaka",42,"Centrocampista",8)
+modric = Giocatore("Modric", 38, "Centrocampista", 10)  
+van_dijk = Giocatore("Van Dijk", 32, "Difensore", 5) 
+
 lippi= Allenatore("Lippi",76,40)
 pippo= Assistente("Pippo",42,"Psicologo")
 sq1=Squadra("Squadra1")
+
 sq1.aggiungi_giocatore(kaka)
+sq1.aggiungi_giocatore(van_dijk)
+sq1.aggiungi_giocatore(modric)
 sq1.aggiungi_allenatore(lippi)
 sq1.aggiungi_assistenti(pippo)
 
