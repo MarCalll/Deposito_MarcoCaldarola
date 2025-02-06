@@ -23,16 +23,44 @@ class GestorePagamenti:
     
     def mostra(self,gestore:MetodoPagamento):
         gestore.mostra_importo()
+
+class Banca:
     
-modo1=Paypal(2500)
-modo2=CartaDiCredito(1500)
-modo3=BonificoBancario(300)
+    gestore=GestorePagamenti()
+    
+    def __init__(self,nome_utente,password,metodoPagamento):
+        self.nome_utente=nome_utente
+        self.password=password
+        self.metodoPagamento=metodoPagamento
+    
+    def menu(self):
+        print("LOGIN RIUSCITO")
+        condizione = True
+        while condizione:
+            print("1. Effettua pagamento")
+            print("2. Mostra importo")
+            print("3. Stop")
+            scelta = int(input("Seleziona un'opzione: "))
+            if scelta == 1:
+                quantita = int(input("1. Quantità da pagare "))
+                self.gestore.paga(self.metodoPagamento,quantita)
+            elif scelta == 2:
+                print("L'importo è di:")
+                self.gestore.mostra(self.metodoPagamento)
+            elif scelta==3:
+                condizione = False
+                print("Programma terminato.")
+            else:
+                print("Opzione non valida! Riprova.")
+    
+    def logInMenu(self):
+        print("LOGIN")
+        nome_utente=(input("Inserire nome utente: "))
+        password=(input("inserire password: "))
+        if nome_utente==self.nome_utente and password==self.password:
+            self.menu()
+        else:
+            print("Login fallito")
 
-gp=GestorePagamenti()
-gp.paga(modo1,500)
-gp.paga(modo2,1000)
-gp.paga(modo3,200)
-
-gp.mostra(modo1)
-gp.mostra(modo2)
-gp.mostra(modo3)
+banca=Banca("Pippo","Baudo",BonificoBancario(500))
+banca.logInMenu()
