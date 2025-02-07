@@ -40,6 +40,7 @@ class Banca:
             print("1. Effettua pagamento")
             print("2. Mostra importo")
             print("3. Stop")
+            
             scelta = int(input("Seleziona un'opzione: "))
             if scelta == 1:
                 quantita = int(input("1. Quantità da pagare "))
